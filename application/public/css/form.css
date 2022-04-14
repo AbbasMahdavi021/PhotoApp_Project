@@ -30,6 +30,13 @@ html {
     text-align: center;
   }
 
+  .main-box h1 {
+    margin-top: 10%;
+    color: rgb(255, 255, 255);
+    font-size: medium;
+    text-align: center;
+  }
+
   .main-box .user-info {
     position: relative;
   }
@@ -144,6 +151,13 @@ html {
     margin: 0 0 30px;
     padding: 0;
     color: rgb(255, 255, 255);
+    text-align: center;
+  }
+
+  .reg-box h1 {
+    margin-top: 10%;
+    color: rgb(255, 255, 255);
+    font-size: medium;
     text-align: center;
   }
 
@@ -273,7 +287,7 @@ html {
     color: #ff0000;
   }
   
-  /* css for viewpost.html*/ 
+  /* css for postimage.html*/ 
   textarea {
     resize: vertical;
     max-height: 100px;
@@ -370,14 +384,15 @@ html {
 
   .header-box {
     text-align: center;
+    top: 60px;
     left: 10%;
-    position: absolute;
-    height: 75px;
+    position: fixed;
+    height: 100px;
     width: 80%;
     color: rgb(0, 0, 0);
     background: #03e9f4;
     box-sizing: border-box;
-    border-radius: 10px;
+    border-radius: 12px;
   }
 
   #count {
@@ -397,9 +412,8 @@ html {
 
   nav {
     top: 100%;
-    left: 35%;
     position: sticky;
-    width: 590px;
+    width: 100%;
     height: 50px;
     background-color: #34495e;
     border-radius: 8px;
@@ -415,9 +429,35 @@ html {
     text-decoration: none;
     text-transform: uppercase;
     text-align: center;
-    color: white;
+    color: rgb(255, 255, 255);
     cursor: pointer;
   }
+
+  nav p {
+    left: 44%;
+    top: -16px;
+    font-size: 30px;
+    position: absolute;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgb(255, 255, 255);
+  }
+
+  nav img {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: -5px;
+    left: 56%;
+    border :#9b59b6;
+  }
+
+  .view-box h2 {
+    position: fixed;
+    text-align: center;
+  }
+
   nav .animation {
     position: absolute;
     height: 100%;
@@ -438,9 +478,6 @@ html {
   a:nth-child(4) {
     width: 160px;
   }
-  a:nth-child(5) {
-    width: 120px;
-  }
   nav .start-home, a:nth-child(1):hover~.animation {
     width: 100px;
     left: 0;
@@ -460,9 +497,4 @@ html {
     width: 160px;
     left: 310px;
     background-color: #9b59b6;
-  }
-  nav .start-contact, a:nth-child(5):hover~.animation {
-    width: 120px;
-    left: 470px;
-    background-color: #e67e22;
   }
