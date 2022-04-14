@@ -1,0 +1,468 @@
+html {
+    height: 100%;
+  }
+  body {
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    background: url(https://img.besthqwallpapers.com/Uploads/29-1-2018/38708/greek-island-thira-summer-santorini-greece.jpg) no-repeat center center fixed #505050;   
+    background-size: cover;
+    box-shadow: 0px 30px 60px -5px #000;
+  }
+
+  .main-box {
+    position: absolute;
+    overflow: bottom;
+    top: 35%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.75);
+    box-sizing: border-box;
+    border-radius: 10px;
+  }
+
+  .main-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: rgb(255, 255, 255);
+    text-align: center;
+  }
+
+  .main-box .user-info {
+    position: relative;
+  }
+
+  .main-box .user-info input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+  .main-box .user-info label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .main-box .user-info input:focus ~ label,
+  .main-box .user-info input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+  }
+
+  .user-info.success input {
+    border-color: #09c372;
+  }
+
+  .input-control.error input {
+    border-color: #ff3860;
+  }
+
+  .user-info .error {
+    color: #ff3860;
+    font-size: 9px;
+    height: 13px;
+  }
+  
+  #submit-button {
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px
+  }
+  
+  #submit-button:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    
+  }
+
+  .main-box form a {
+    padding: 10px 20px;
+    color: #03e9f4;
+    font-size: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px
+  }
+
+  .main-box a:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    
+  }
+
+  .main-box .tacbox input {
+    height: 2em;
+    width: 2em;
+    vertical-align: middle;
+  }
+
+    /* css for register.html*/   
+
+  .reg-box {
+    position: absolute;
+    overflow: bottom;
+    top: 52%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.75);
+    box-sizing: border-box;
+    border-radius: 10px;
+  }
+
+  .reg-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: rgb(255, 255, 255);
+    text-align: center;
+  }
+
+  .reg-box .user-info {
+    position: relative;
+  }
+
+  .reg-box .user-info input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+  .reg-box .user-info label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+
+  .reg-info input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+  .reg-info label {
+    margin-top: 30px;
+    font-size: 16px;
+    color: #fff;
+    transition: .5s;
+  }
+
+  .reg-box .user-age label {
+    position: relative;
+    padding: 10px 0;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    pointer-events: none;
+    transition: .5s;
+  }
+
+  .reg-box form a {
+    padding: 10px 20px;
+    color: #03e9f4;
+    font-size: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px
+  }
+
+  .reg-box a:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    
+  }
+
+  .reg-box .tacbox input {
+    height: 2em;
+    width: 2em;
+    vertical-align: middle;
+  }
+
+  input[type="radio2"]{
+    margin-left: 30px;
+  }
+
+  #message {
+    font-family: sans-serif;
+    margin-left: 15px;
+    font-size: 12px;
+    color: rgb(255, 255, 255);
+    line-height: 0.5;
+  }
+    
+  #message p {
+    font-family: sans-serif;
+    font-size: 14px;
+    margin-left: 40px;
+    line-height: 0.75;
+  }
+
+  .valid {
+    color: green;
+  }
+  
+  .valid:before {
+    position: relative;
+    left: -35px;
+    content: "\2713";
+  }
+  
+  .invalid {
+    color: red;
+  }
+  
+  .invalid:before {
+    position: relative;
+    left: -35px;
+    content: "\2613";
+  }
+
+  .reg-info.error input {
+    border-color: #ff0000;
+  }
+
+  .reg-info.error {
+    margin-bottom: 15px;
+    color: #ff0000;
+  }
+  
+  /* css for viewpost.html*/ 
+  textarea {
+    resize: vertical;
+    max-height: 100px;
+    min-height: 20px;
+  }
+
+  /* css for viewpost.html*/ 
+
+  .view-box {
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    width: 900px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.7);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+  }
+  
+  .view-box h1 {
+    padding: 0;
+    color: #fff;
+    text-align: center;
+  }
+
+  .view-box h2 {
+    border-bottom: 2px solid rgb(255, 255, 255);
+    margin-top: 40px;
+    margin: 0 0 5px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+  }
+
+  .view-box h3 {
+    margin: 0 0 10px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+  }
+
+  img {
+    border: 8px solid #03e9f4;
+    margin-bottom: 60px;
+  }
+
+  .comment-box {
+    position: absolute;
+    top: 70%;
+    left: 83.8%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.75);
+    box-sizing: border-box;
+    border-radius: 10px;
+  }
+
+  .comment-box label {
+    position: relative;
+    padding: 10px 0;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    pointer-events: none;
+    transition: .5s;
+  }
+
+
+  /* Home page css */
+
+  div.gallery {
+    border: 1px solid #ccc;
+    float: left;
+    width: 300px;
+  }
+
+  div.gallery:hover {
+    border: 1px solid #777;
+  }
+
+  div.gallery img {
+    width: 100%;
+    height: auto;
+  }
+
+  div.desc {
+    color: #fff;
+    background: rgba(0,0,0,.75);
+    position: static;
+    height: 40px;
+  }
+
+  .header-box {
+    text-align: center;
+    left: 10%;
+    position: absolute;
+    height: 75px;
+    width: 80%;
+    color: rgb(0, 0, 0);
+    background: #03e9f4;
+    box-sizing: border-box;
+    border-radius: 10px;
+  }
+
+  #count {
+    width: 100%;
+    font-weight: bold;
+    padding: 10px 0;
+    font-size: 22px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+
+  /* nav bar */
+
+  nav {
+    top: 100%;
+    left: 35%;
+    position: sticky;
+    width: 590px;
+    height: 50px;
+    background-color: #34495e;
+    border-radius: 8px;
+    font-size: 0;
+  }
+  nav a {
+    line-height: 50px;
+    height: 100%;
+    font-size: 15px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+  }
+  nav .animation {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    z-index: 0;
+    transition: all .5s ease 0s;
+    border-radius: 8px;
+  }
+  a:nth-child(1) {
+    width: 100px;
+  }
+  a:nth-child(2) {
+    width: 110px;
+  }
+  a:nth-child(3) {
+    width: 100px;
+  }
+  a:nth-child(4) {
+    width: 160px;
+  }
+  a:nth-child(5) {
+    width: 120px;
+  }
+  nav .start-home, a:nth-child(1):hover~.animation {
+    width: 100px;
+    left: 0;
+    background-color: #1abc9c;
+  }
+  nav .start-about, a:nth-child(2):hover~.animation {
+    width: 110px;
+    left: 100px;
+    background-color: #e74c3c;
+  }
+  nav .start-blog, a:nth-child(3):hover~.animation {
+    width: 100px;
+    left: 210px;
+    background-color: #3498db;
+  }
+  nav .start-portefolio, a:nth-child(4):hover~.animation {
+    width: 160px;
+    left: 310px;
+    background-color: #9b59b6;
+  }
+  nav .start-contact, a:nth-child(5):hover~.animation {
+    width: 120px;
+    left: 470px;
+    background-color: #e67e22;
+  }

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>View Post</title>
+        <link rel="stylesheet" type="text/css" href="../css/form.css">
+    </head>
+    <body>
+
+        
+        <nav>
+            <a href="viewpost.html">View Image</a>
+            <a href="home.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="registration.html">Register</a>
+            <a href="postimage.html">Post Image</a>
+            <div class="animation start-home"></div>
+        </nav>
+
+        <div class="view-box">
+
+            <h1>Posted Image</h1><br><br>
+
+            <section id="post">
+
+                <section id="post_title">
+                    <h2 class="text-center">Title of the Post <br>'Mishima'</h2><br>
+                </section>
+
+                <section id="post_image:">
+                    <img src="https://www.nybooks.com/wp-content/uploads/2019/04/nathan_1-052319.jpg" 
+                    alt="Yukio Mishima, Tokyo, 1970" class="center" height="530" width="800">
+                </section>
+
+                <section id="post_author">
+                    <h3 class="text-center">Author of the Post<br> 'Abbas'</h3><br>
+                </section>
+
+                <section id="post_date">
+                    <h3 class="text-center">Time of the Post<br>'4:20 AM'</h3><br>
+                </section>
+
+            </section>
+
+        </div>
+
+        <div class="comment-box">
+            <form action="submit" method="POST">
+                <label>Comment</label>
+                    <br>
+                    <br>
+                    <textarea name="text" cols="40" rows="1.5" wrap = "off" required=""
+                    placeholder = "Type your comment here..."></textarea><br>
+                <input type="submit" id="submit-button" value="Comment">
+            </form>
+        </div>
+
+        
+    </body>
+</html>
