@@ -7,7 +7,7 @@ const logger = require("morgan");
 const handlebars = require("express-handlebars");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
-
+const { requestPrint, errorPrint} = require('./helpers/debug/debugprinters');
 const app = express();
 
 app.engine(
@@ -33,6 +33,11 @@ app.use(cookieParser());
 app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use("/public", express.static(path.join(__dirname, "public")));
 
+app.use((req,res,next) => {
+  requestPrint(`Method ${req.method}, Route: ${req.url}`);
+  next();
+})
+
 //http://localhost:3000/users
 app.use("/", indexRouter); // route middleware from ./routes/index.js
 app.use("/users", usersRouter); // route middleware from ./routes/users.js
@@ -54,7 +59,7 @@ app.use((req,res,next) => {
 app.use(function (err, req, res, next) {
   res.locals.message = err.message;
   res.locals.error = err;
-  console.log(err);
+  errorPrint(err);
   // render the error page
   res.status(err.status || 500);
   res.render("error");
