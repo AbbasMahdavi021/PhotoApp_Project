@@ -18,14 +18,14 @@ async function getConnection() {
     //TODO make sure to change to the user you want to use
     user: "root", //Your DB username
     //TODO make sure to change to the correct password for your user.
-    password: "0322", //Your DB password
+    password: "00364170", //Your DB password
   });
 }
 
 async function makeDatabase(connection) {
   //TODO make sure to change yourdbnamehere
   const [result, _] = await connection.query(
-    "CREATE DATABASE IF NOT EXISTS yourdbnamehere;"
+    "CREATE DATABASE IF NOT EXISTS csc317db;"
   );
   if (result && result.warningStatus > 0) {
     const [warningResult, _] = await connection.query("SHOW WARNINGS");
@@ -39,6 +39,18 @@ async function makeUsersTable(connection) {
   const [result, _] = await connection.query(
     // Users Table SQL Goes here
     `
+    CREATE TABLE IF NOT EXISTS csc317db.users (
+      id INT NOT NULL AUTO_INCREMENT,
+      username VARCHAR(128) NOT NULL,
+      email VARCHAR(255) NOT NULL,
+      password VARCHAR(255) NOT NULL,
+      active INT NOT NULL,
+      created DATETIME NOT NULL,
+      PRIMARY KEY (id),
+      UNIQUE INDEX id_UNIQUE (id ASC) VISIBLE,
+      UNIQUE INDEX username_UNIQUE (username ASC) VISIBLE,
+      UNIQUE INDEX email_UNIQUE (email ASC) VISIBLE)
+    ENGINE = InnoDB;
     `
   );
 
@@ -53,7 +65,26 @@ async function makeUsersTable(connection) {
 async function makePostsTable(connection) {
   const [result, _] = await connection.query(
     // Posts Table SQL Goes here
-    ``
+    `
+    CREATE TABLE IF NOT EXISTS csc317db.posts (
+      id INT NOT NULL AUTO_INCREMENT,
+      title VARCHAR(128) NOT NULL,
+      description MEDIUMTEXT NOT NULL,
+      photopath VARCHAR(2048) NOT NULL,
+      thumbnail VARCHAR(2048) NOT NULL,
+      active INT NOT NULL DEFAULT 1,
+      created DATETIME NOT NULL,
+      fk_userId INT NOT NULL,
+      PRIMARY KEY (id),
+      UNIQUE INDEX id_UNIQUE (id ASC) VISIBLE,
+      INDEX post_author_idx (fk_userId ASC) VISIBLE,
+      CONSTRAINT post_author
+        FOREIGN KEY (fk_userId)
+        REFERENCES csc317db.users (id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+    `
   );
   if (result && result.warningStatus > 0) {
     const [warningResult, _] = await connection.query("SHOW WARNINGS");
@@ -67,6 +98,25 @@ async function makeCommentsTable(connection) {
   const [result, _] = await connection.query(
     // Comments Table SQL Goes here
     ` 
+    CREATE TABLE IF NOT EXISTS csc317db.comments (
+      id INT NOT NULL AUTO_INCREMENT,
+      comment MEDIUMTEXT NOT NULL,
+      created DATETIME NOT NULL,
+      fk_postId INT NOT NULL,
+      fk_authorId INT NOT NULL,
+      PRIMARY KEY (id),
+      UNIQUE INDEX id_UNIQUE (id ASC) VISIBLE,
+      CONSTRAINT comment_author
+        FOREIGN KEY (fk_authorId)
+        REFERENCES csc317db.users (id)
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION,
+      CONSTRAINT comment_belongsTo
+        FOREIGN KEY (fk_postId)
+        REFERENCES csc317db.posts (id)
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION)
+    ENGINE = InnoDB;
     `
   );
   if (result && result.warningStatus > 0) {
@@ -83,7 +133,7 @@ async function makeCommentsTable(connection) {
     connection = await getConnection();
     await makeDatabase(connection); // make DB
     //TODO make sure to change yourdbnamehere
-    await connection.query("USE yourdbnamehere"); // set new DB to the current DB
+    await connection.query("USE csc317db"); // set new DB to the current DB
     await makeUsersTable(connection); // try to make user table
     await makePostsTable(connection); // try to make posts table
     await makeCommentsTable(connection); // try to make comments table
