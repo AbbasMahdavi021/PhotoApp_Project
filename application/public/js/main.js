@@ -10,11 +10,10 @@ var capital = document.getElementById("capital");
 var number = document.getElementById("number");
 var length = document.getElementById("length");
 
-form.addEventListener('submit', e => {
-  e.preventDefault();
-
-  validateInputs();
-});
+// form.addEventListener('submit', e => {
+//   e.preventDefault();
+//   validateInputs();
+// });
 
 const setError = (element, message) => {
   const inputControl = element.parentElement;
@@ -49,7 +48,7 @@ const validateInputs = () => {
 
   if (usernameValue.length < 3) {
     setError(username, 'Username must be at least 3 character!');
-  } else if (usernameValue.match(/^[0-9]/i)) {
+  } else if (!usernameValue.match(/^[A-Za-z]/i)) {
     setError(username, 'Username must being with a letter!');
   } else {
     setSuccess(username);

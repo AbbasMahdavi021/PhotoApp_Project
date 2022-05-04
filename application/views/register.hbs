@@ -1,23 +1,23 @@
 <div class="reg-box">
 
   <h2>Register</h2>
-  <form id="form" action="/">
+  <form id="form" method="POST" action="/users/register" enctype="application/x-www-form-urlencoded">
 
     <div class="reg-info">
       <label for="username">Username</label>
-      <input id="username" name="username" type="text">
+      <input id="username" name="username" type="text" required>
       <div class="error"></div>
     </div>
 
     <div class="reg-info">
       <label for="email">Email</label>
-      <input id="email" name="email" type="text">
+      <input id="email" name="email" type="text" required>
       <div class="error"></div>
     </div>
 
     <div class="reg-info">
       <label for="password">Password</label>
-      <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+      <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
       <div class="error"></div>
     </div>
 
@@ -31,7 +31,7 @@
 
     <div class="reg-info">
       <label for="password2">Confirm Password </label>
-      <input id="password2" name="password2" type="password">
+      <input id="password2" name="password2" type="password" required>
       <div class="error"></div>
     </div>
 
@@ -57,7 +57,7 @@
     </div>
 
     <div class="submit-button">
-      <input id="submit-button" type="submit" />
+      <input id="submit-button" type="submit" name="submit-button" />
     </div>
 
     <h1>Already have an account? <a href="/login">Login</a></h1>

@@ -7,7 +7,8 @@ const logger = require("morgan");
 const handlebars = require("express-handlebars");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
-const { requestPrint, errorPrint} = require('./helpers/debug/debugprinters');
+var errorPrint = require('./helpers/debug/debugprinters').errorPrint;
+const { requestPrint} = require('./helpers/debug/debugprinters');
 const app = express();
 
 app.engine(
