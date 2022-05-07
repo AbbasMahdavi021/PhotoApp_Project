@@ -4,13 +4,16 @@ const favicon = require('serve-favicon');
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
+var sessions = require('express-session');
+var mysqlSession = require('express-mysql-session')(sessions);
+var flash = require('express-flash');
 const handlebars = require("express-handlebars");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 var errorPrint = require('./helpers/debug/debugprinters').errorPrint;
 const { requestPrint} = require('./helpers/debug/debugprinters');
-const app = express();
 
+const app = express();
 app.engine(
   "hbs",
   handlebars({
@@ -18,11 +21,33 @@ app.engine(
     partialsDir: path.join(__dirname, "views/partials"), // where to look for partials
     extname: ".hbs", //expected file extension for handlebars files
     defaultLayout: "layout", //default layout for app, general template for all pages in app
-    helpers: {}, //adding new helpers to handlebars for extra functionality
+    helpers: {
+      emptyObject: (obj) => {
+        return !(obj.constructor === Object && Object.keys(obj).length == 0);
+      }
+    }, //adding new helpers to handlebars for extra functionality
   })
 );
 
+
+var mysqlSessionStore = new mysqlSession(
+  {
+    /* using defaults options*/
+  },
+  require('./config/database')
+);
+
+
 // view engine setup
+app.use(sessions ({
+  key: "csid",
+  secret: "this is a secret from csc317",
+  store: mysqlSessionStore,
+  resave: false,
+  saveUninitialized: false,
+}))
+
+app.use(flash());
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 
@@ -38,6 +63,15 @@ app.use((req,res,next) => {
   requestPrint(`Method ${req.method}, Route: ${req.url}`);
   next();
 })
+
+app.use((req, res, next) => {
+  console.log(req.session);
+  if(req.session.username){
+    res.locals.logged = true;
+  }
+  next();
+})
+
 
 //http://localhost:3000/users
 app.use("/", indexRouter); // route middleware from ./routes/index.js

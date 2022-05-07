@@ -65,10 +65,10 @@ html {
   
   .main-box .user-info input:focus ~ label,
   .main-box .user-info input:valid ~ label {
-    top: -20px;
+    top: -25px;
     left: 0;
     color: #03e9f4;
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .user-info.success input {
@@ -447,7 +447,7 @@ html {
   nav img {
     width: 60px;
     height: 60px;
-    position: absolute;
+    position: fixed;
     top: -5px;
     left: 63%;
     border :#9b59b6;
@@ -497,4 +497,24 @@ html {
     width: 160px;
     left: 310px;
     background-color: #9b59b6;
+  }
+
+
+/* error user feedback*/
+
+  #flash-message {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    background-color:#03e9f4;
+    padding: 10px;
+    position: fixed;
+    left: 50%;
+    top: 16.9%;
+    transform: translate(-50%,0);
+  }
+
+  #flash-message div {
+    text-align: center;
   }

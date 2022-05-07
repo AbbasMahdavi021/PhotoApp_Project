@@ -1,11 +1,43 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <link rel="stylesheet" type="text/css" href="/public/css/form.css">
   <script defer src="/public/js/main.js"></script>
+  <script defer src="/public/js/validation.js"></script>
+  <script defer src="/public/js/frontendjs.js"></script>
+
 </head>
-  <body>
-    {{{body}}}
-    {{>nav}}
-  </body>
+
+<body>
+  {{#if (emptyObject messages)}}
+  {{> flashmessage}}
+  {{/if}}
+  {{{body}}}
+  {{>nav}}
+
+
+
+  {{#if logged}}
+  <script>
+    let ele = document.getElementById('logout-button');
+    if (ele) {
+      ele.onclick = (event) => {
+        fetch('/users/logout', {
+          method: "POST"
+        })
+        .then((data) => {
+          location.replace('/');
+        })
+      }
+    }
+  </script>
+
+  {{/if}}
+
+
+
+
+</body>
+
 </html>
