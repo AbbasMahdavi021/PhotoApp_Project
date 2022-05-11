@@ -12,12 +12,9 @@ var length = document.getElementById("length");
 
 
 form.addEventListener('submit', e => {  
-  if (validateInputs === true){
-    e.currentTarget.submit();
-  }else{
     e.preventDefault();
     validateInputs();
-  }
+    e.currentTarget.submit();
 });
 
 const setError = (element, message) => {

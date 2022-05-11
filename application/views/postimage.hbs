@@ -1,28 +1,24 @@
 <div class="main-box">
     <h2>Post An Image</h2>
-    <form>
+    <form id="post-image" method="POST" enctype="multipart/form-data" action='/posts/createPost'>
         <div class="user-info">
-            <input type="text" name="" required="">
+            <input type="text" name="title" maxlength="25" required="">
             <label>Image Title</label>
         </div>
 
         <div class="user-info">
+            <input type="text" name="description" maxlength="53" required="">
             <label>Image Description</label>
-            <br>
-            <br>
-            <textarea name="text" cols="40" rows="1.5" wrap="off" required=""
-                placeholder="Enter Image Description..."></textarea><br>
-            <br>
         </div>
 
         <div class="user-info">
             <label for="img">Upload Image</label><br>
             <br>
-            <input type="file" id="img" name="img" accept="image/*" required><br>
+            <input type="file" id="img" name="uploadImage" accept="image/*" required><br>
         </div>
 
         <div class="tacbox">
-            <input id="checkbox" type="checkbox" />
+            <input id="checkbox" type="checkbox" required/>
             <label for="checkbox"> <a href="/">Terms and Conditions</a>.</label>
         </div>
 

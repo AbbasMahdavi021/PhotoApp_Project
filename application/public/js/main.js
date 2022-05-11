@@ -7,7 +7,7 @@ function loadXMLDoc() {
     if (this.readyState == 4 && this.status == 200) {
       var x = JSON.parse(this.responseText);
       num = x.length;
-      document.getElementById("count").innerHTML = `There are ${num} photo(s) being displayed!`;
+      document.getElementById("card").innerHTML = `There are ${num} photo(s) being displayed!`;
       x.forEach((obj) => {
         document.getElementById("demo")
         .innerHTML += `<div id=${obj.id} class="gallery" onclick="fadeOut(${obj.id})">
@@ -38,7 +38,7 @@ function fadeOut(id) {
       clearInterval(timer);
       element.remove();
       num--;
-      document.getElementById("count")
+      document.getElementById("card")
       .innerHTML = `<div>There are ${num} photos being displayed!</div>`;
     }
     element.style.opacity = op;
