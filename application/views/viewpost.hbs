@@ -1,28 +1,26 @@
-<div class="view-box">
+<div class="view-page">
 
-    <h1>Posted Image</h1><br><br>
+    <div class="image-box">
+        <section id="post">
+            <h1>Posted Image</h1><br><br>
+            <h3 class="text-center">Title: <br> {{currentPost.title}}</h3><br>
+            <h3 class="text-center">Author:<br> {{currentPost.username}}</h3><br>
+            <h3 class="text-center">Time: <br> {{currentPost.created}}</h3><br>
+            <img src="/{{currentPost.photopath}}" alt="" class="center" height="330" width="600">
+            <h3 class="text-center">Description: <br> {{currentPost.description}}</h3><br>
+        </section>
+    </div>
 
-    <section id="post">
-
-
-        <h3 class="text-center">Title: <br> {{currentPost.title}}</h3><br>
-        <h3 class="text-center">Author:<br> {{currentPost.username}}</h3><br>
-        <h3 class="text-center">Time: <br> {{currentPost.created}}</h3><br>
-        <img src="/{{currentPost.photopath}}" alt="" class="center" height="330" width="600">
-        <h3 class="text-center">Description: <br> {{currentPost.description}}</h3><br>
-        
-        <div class="comment-box">
-            <form action="submit" method="POST">
-                <label>Comment</label>
-                <br>
-                <br>
-                <textarea name="text" cols="40" rows="1.5" wrap="off" required=""
-                    placeholder="Type your comment here..."></textarea><br>
-                <input type="submit" id="submit-button" value="Comment">
-            </form>
-        </div>
-
-    </section>
+    <div class="comment-box">
+        <form action="submit" method="POST">
+            <label>Comment</label>
+            <br>
+            <br>
+            <textarea name="text" cols="40" rows="1.5" wrap="off" required=""
+                placeholder="Type your comment here..."></textarea><br>
+            <input type="submit" id="submit-button" value="Comment">
+        </form>
+    </div>
 
 </div>
 
