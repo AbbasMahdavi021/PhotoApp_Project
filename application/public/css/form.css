@@ -302,33 +302,34 @@ textarea {
 
 /* css for viewpost.html*/
 
-.view-page {
-  display: grid;
-  grid-template-columns: 100px 100px;
-  grid-template-rows: 100px;
-  grid-column-gap: 5px;
-}
-
-.image-box {
-  position: relative;
-  padding-top: 100px;
-  display: grid;
-  width: 900px;
-  padding: 40px;
-  transform: translate(-50%, -50%);
+.post-container {
+  margin-top: 90px;
   background: rgba(0, 0, 0, 0.7);
-  box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
-  border-radius: 10px;
+  grid-area: content;
+  padding-top: 5em;
+  padding-bottom: .35em;
+  display: grid;
+  grid-gap: .2rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "photoinfo comments";
 }
 
-.image-box h1 {
+.photo-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  grid-area: photoinfo;
+
+}
+
+.photo-container h1 {
   padding: 0;
   color: #fff;
   text-align: center;
 }
 
-.image-box h2 {
+.photo-container h2 {
   border-bottom: 2px solid rgb(255, 255, 255);
   margin-top: 40px;
   margin: 0 0 5px;
@@ -337,51 +338,45 @@ textarea {
   text-align: center;
 }
 
-.image-box h3 {
+.photo-container h3 {
   margin: 0;
   padding: 0;
-  color: #fff;
+  color:#03e9f4;
   text-align: center;
 }
 
-.image-box img {
+.photo-container img {
   max-width: 50;
-
 }
 
 .center {
   display: block;
-  margin-left: 13%;
+  margin-left: 10%;
+}
+
+#comment-container {
+  display: grid;
+  justify-self: center;
+  grid-area: comments;
+  grid-template-rows: 75px 75px;
+  grid-template-columns: 1fr;
+  gap: .2rem;
+  grid-template-areas: "messages" "comment-box";
+  max-height: 80vh;
 }
 
 .comment-box {
-  display: inline-block;
-  position: absolute;
-  top: 70%;
-  left: 83.8%;
-  width: 400px;
-  padding: 40px;
-  transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, .75);
-  box-sizing: border-box;
-  border-radius: 1px;
+  top: 100%;
+  padding: .20rem;
+  display: flex;
+  grid-area: comment-box;
+  border-radius: .35rem;
 }
 
-.comment-box label {
-  position: relative;
-  padding: 10px 0;
-  font-size: 16px;
-  color: rgb(255, 255, 255);
-  pointer-events: none;
-  transition: .5s;
+.comment-box textarea {
+  max-height: 60px;
+  padding: .55rem;
 }
-
-
-
-
-
-
-
 
 /* Home page css */
 

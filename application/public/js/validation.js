@@ -11,10 +11,9 @@ var number = document.getElementById("number");
 var length = document.getElementById("length");
 
 
-form.addEventListener('submit', e => {  
-    e.preventDefault();
-    validateInputs();
-    e.currentTarget.submit();
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  validateInputs();
 });
 
 const setError = (element, message) => {
@@ -78,9 +77,7 @@ const validateInputs = () => {
   } else {
     setSuccess(password2);
   }
-  return true;
-};
-
+}
 
 // Validate Password! 
 myInput.onfocus = function () {
@@ -126,4 +123,4 @@ myInput.onkeyup = function () {
     length.classList.remove("valid");
     length.classList.add("invalid");
   }
-}
+};

@@ -7,10 +7,12 @@ const logger = require("morgan");
 var sessions = require('express-session');
 var mysqlSession = require('express-mysql-session')(sessions);
 var flash = require('express-flash');
+
 const handlebars = require("express-handlebars");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 var postsRouter = require("./routes/posts");
+var commentRouter = require('./routes/comments');
 var errorPrint = require('./helpers/debug/debugprinters').errorPrint;
 const { requestPrint} = require('./helpers/debug/debugprinters');
 
@@ -77,7 +79,7 @@ app.use((req, res, next) => {
 app.use("/", indexRouter); // route middleware from ./routes/index.js
 app.use("/users", usersRouter); // route middleware from ./routes/users.js
 app.use('/posts', postsRouter);
-
+app.use('/comments', commentRouter);
 
 /**
  * Catch all route, if we get to here then the 
