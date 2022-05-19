@@ -27,7 +27,7 @@ router.get('/viewpost', (req,res,next) => {
   res.render('viewpost');
 });
 
-router.get('/posts/:id(\\d+)', getPostById, getCommentByPostId, (req, res, next) => {
+router.get('/post/:id(\\d+)', getPostById, getCommentByPostId, (req, res, next) => {
   res.render("viewpost", {title: `Post ${req.params.id}`});
 });
 

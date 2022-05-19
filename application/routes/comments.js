@@ -38,9 +38,7 @@ router.post('/create', (req, res, next) => {
                     })
                 }
             }).catch((err) => next(err));
-
     }
-
 })
 
 
