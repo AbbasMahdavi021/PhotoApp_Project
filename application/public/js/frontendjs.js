@@ -24,6 +24,8 @@ function addFlashFromFrontEnd(message) {
   setFlashMessageFadeOut(flashMessageDiv)
 }
 
+
+
 function createCard(postData) {
   return `<div id="post-${postData.id}" class="card">
     <img class="card-image" src="${postData.thumbnail}" alt="Missing Image">

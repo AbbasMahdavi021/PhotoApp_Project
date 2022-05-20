@@ -23,7 +23,7 @@ Please follow the instructions below and fill in the information requested when 
 2. steps here
 
 ## Run Instructions
-1. npm start
-2. steps here 
+1. cd application
+2. npm start
 
 Please read /views/register.hbs's message for registration validation. Just a small FYI for an validation/submit button issue! 
