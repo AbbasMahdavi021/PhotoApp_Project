@@ -19,9 +19,11 @@ Please follow the instructions below and fill in the information requested when 
 # Build/Run Instructions
 
 ## Build Instructions
-1. steps here
+1. npm instal
 2. steps here
 
 ## Run Instructions
-1. steps here
+1. npm start
 2. steps here 
+
+Please read /views/register.hbs's message for registration validation. Just a small FYI for an validation/submit button issue! 
