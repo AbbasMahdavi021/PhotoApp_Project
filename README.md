@@ -10,9 +10,9 @@ Please follow the instructions below and fill in the information requested when 
 
 |               | Information   |
 |:-------------:|:-------------:|
-| Student Name  | name-here     |
-| Student ID    | id-here       |
-| Student Email | email-here    |
+| Student Name  | Abbas mahdavi |
+| Student ID    | 918345420     |
+| Student Email | amahdavi2@sfsu.edu |
 
 
 
