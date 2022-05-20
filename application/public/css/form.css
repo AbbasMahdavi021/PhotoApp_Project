@@ -562,58 +562,6 @@ div [class=card-body]>a[class=card-button] {
 
 }
 
-
-/* div.gallery {
-    border: 1px solid #ccc;
-    float: left;
-    width: 300px;
-  }
-
-  div.gallery:hover {
-    border: 1px solid #777;
-  }
-
-  div.gallery img {
-    width: 100%;
-    height: auto;
-  }
-
-  div.desc {
-    color: #fff;
-    background: rgba(0,0,0,.75);
-    position: static;
-    height: 40px;
-  }
-
-  .header-box {
-    text-align: center;
-    top: 60px;
-    left: 10%;
-    position: fixed;
-    height: 100px;
-    width: 80%;
-    color: rgb(220, 16, 16);
-    background: #f49c03;
-    box-sizing: border-box;
-    border-radius: 12px;
-  }
-
-  #card {
-    width: 100%;
-    font-weight: bold;
-    padding: 10px 0;
-    font-size: 22px;
-    color: rgb(255, 255, 255);
-    margin-bottom: 30px;
-    border: none;
-    border-bottom: 1px solid #fff;
-    outline: none;
-    background: transparent;
-  }
- */
-
-
-
 /* nav bar */
 
 nav {
@@ -741,14 +689,6 @@ a:nth-child(3):hover~.animation {
   left: 210px;
   background-color: #12d418;
 }
-
-/* nav .start-View image,
-a:nth-child(4):hover~.animation {
-  width: 160px;
-  left: 310px;
-  background-color: #9b59b6;
-} */
-
 
 /* error user feedback*/
 

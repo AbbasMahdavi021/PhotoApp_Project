@@ -12,9 +12,4 @@ routeProtectors.UserIsLoggedIn = function(req, res, next) {
     }
 }
 
-
-
-
-
-
 module.exports = routeProtectors;

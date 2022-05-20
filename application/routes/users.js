@@ -12,9 +12,6 @@ router.post('/register', (req, res, next) => {
   let password = req.body.password;
   let password2 = req.body.password;
 
-  /**
-   * do server side validation
-   */
 
   UserModel.usernameExists(username)
     .then((userDoesNameExist) => {
@@ -70,9 +67,6 @@ router.post('/login', (req, res, next) => {
   let username = req.body.username;
   let password = req.body.password;
 
-  /**
-   * do server side validation
-   */
 
   UserModel.authenticate(username, password)
     .then((loggedUserId) => {

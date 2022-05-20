@@ -49,5 +49,4 @@ PostModel.getPostById = (postId) => {
     .catch(err => Promise.reject(err));
 };
 
-
 module.exports = PostModel;

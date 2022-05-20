@@ -1,5 +1,25 @@
 <div class="reg-box">
 
+
+
+{{!-- Message For Professor:
+I have validations for registeration pages which show red errors, when given not valid pass,user,etc
+Please check that on the reqster page, and when they are met, the submit button won't work!
+
+We have to un-comment a line in /public/js/validation (line: "// e.currentTargetsubmit();" 
+after uncommenting this and refreshing the page, we have to put valid inputs, then press submit, 
+other wise it will submit what ever is in the text boxes (even if they are empty), and submits them to data base,
+eventhough the inputs are not valid!
+
+Idk how to fix that, you suggested the "// e.currentTargetsubmit();" line in office hours, but it doesn't really work!
+
+If this is confusing, I showed what I mean in my video demo! If u can fix this plz let me know if u had the chance!
+I'm really curious, Other wise, maybe I'll just ask in person during summer ;) Thank you!!
+
+--}}
+
+
+
   <h2>Register</h2>
   <form id="form" method="POST" action="/users/register" enctype="application/x-www-form-urlencoded">
 
