@@ -32,11 +32,11 @@ postMiddleware.getPostById = async function(req, res, next) {
 }
 
 
-postMiddleware.getCommentByPostId = async function(req, res, next) {
+postMiddleware.getCommentsByPostId = async function(req, res, next) {
     let postId =req.params.id;
     try{
         let results = await getCommentsForPost(postId);
-        res.locals.currentPost.comment = results;
+        res.locals.currentPost.comments = results;
         next();
     } catch (error) {
         next(error);

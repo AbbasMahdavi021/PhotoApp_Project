@@ -14,7 +14,6 @@
     </div>
 
     <div id="comment-container">
-
         <div id="messages">
             {{#each currentPost.comments}}
                 {{> comment this}}
@@ -29,6 +28,7 @@
     </div>
 </div>
 
+
 <script>
     document.addEventListener('DOMContentLoaded', (event) => {
         document.querySelectorAll('span[class=date-posted]')
@@ -37,16 +37,16 @@
             });
     });
 
-
     function addMessage(data) {
         let template = document.createElement('template');
         template.innerHTML =
-            `<div id="messsage-${data.commentId}">
-                <strong class="author-text"> @${data.username}</strong>
-                <span class="date-posted">${new Date().toLocaleString()}</span>
-                <div class="comment-text">${data.comment}</div>
-            </div>`;
-            document.getElementById('messages').firstChild.before(template.content.firstChild);
+        `<div id="message-${data.commentId}">
+            <strong class="author-text">@${data.username}</strong>
+            <span class="date-posted">${new Date().toLocaleString()}</span>
+            <div class="comment-text">${data.commentText}</div>
+        </div>`;
+
+        document.getElementById('messages').firstChild.before(template.content.firstChild);
     }
 
     document.getElementById('comment-button').onclick = (event) => {

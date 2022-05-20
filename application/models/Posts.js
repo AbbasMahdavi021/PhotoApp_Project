@@ -2,7 +2,7 @@ var db = require("../config/database");
 const PostModel = {};
 
 PostModel.create = (title, description, photopath, thumbnail, fk_userId) => {
-    let baseSQL = "INSERT INTO posts (title, description, photopath, thumbnail, created, fk_userid)\
+    let baseSQL = "INSERT INTO posts (title, description, photopath, thumbnail, created, fk_userId)\
     VALUE (?, ?, ?, ?, now(), ?);;";
     return db.execute(baseSQL, [title, description, photopath, thumbnail, fk_userId,])
     .then(([results, fields]) => {
@@ -39,7 +39,7 @@ PostModel.getPostById = (postId) => {
     `SELECT u.username, p.title, p.description, p.photopath, p.created
     FROM users u
     JOIN posts p
-    ON u.id=fk_userid
+    ON u.id=fk_userId
     WHERE p.id=?;`;
   
     return db.execute(baseSQL,[postId])

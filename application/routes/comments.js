@@ -5,7 +5,6 @@ const { errorPrint, successPrint } = require('../helpers/debug/debugprinters');
 const { create } = require('../models/Comments');
 
 
-
 router.post('/create', (req, res, next) => {
     if (!req.session.username) {
         errorPrint("Must be logged in to comment");
