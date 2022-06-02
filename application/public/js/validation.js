@@ -12,7 +12,7 @@ var length = document.getElementById("length");
 
 
 form.addEventListener('submit', e => {
-  // e.currentTargetsubmit();
+  e.currentTargetsubmit();
   e.preventDefault();
   validateInputs();
 });
