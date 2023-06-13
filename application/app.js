@@ -17,6 +17,7 @@ var errorPrint = require('./helpers/debug/debugprinters').errorPrint;
 const { requestPrint} = require('./helpers/debug/debugprinters');
 
 const app = express();
+
 app.engine(
   "hbs",
   handlebars({
